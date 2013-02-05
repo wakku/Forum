@@ -1,0 +1,40 @@
+h1 {
+	font-size:14px;
+	color:#00F;
+}
+#topic {
+	font-family: Tahoma, Geneva, sans-serif;
+	font-size: 12px;
+	background-color: #FFC;
+	padding: 0px 10px;
+}
+
+#topic .title {
+	font-weight: bold;
+}
+#topic a.btn_link:link, #reply a.btn_link:link  {
+	color: #999;
+}
+#topic .points, #topic .time, #topic .comments, #topic .bar {
+	font-size: 11px;
+	color: #999;
+}
+#topic .bar {
+	padding-right: 5px;
+	padding-left: 5px;
+}
+
+#topic .btn_reply {
+	padding-bottom: 10px;
+	display: block;
+}
+#reply {
+	display: block;
+	padding-top: 10px;
+	padding-left: 50px;
+}
+#topic #reply .text {
+	display: block;
+}
+
+
