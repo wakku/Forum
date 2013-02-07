@@ -1,47 +1,47 @@
 <html>
-<head>
-<!--<script src="/static/jquery.min.js"></script>
-<link href="style.css" rel="stylesheet" type="text/css">-->
-<script type="text/javascript">
-    $.getJSON('/topics', function (data) {
-        var items = [];
+	<head>
+		<script src="/static/jquery.min.js"></script>
+		<link href="style.css" rel="stylesheet" type="text/css">
+		<script type="text/javascript">
+    		$.getJSON('/topics', function (data) {
+        		var items = [];
 
-        $.each(data, function (key, val) {
-            items.push('<li id="' + key + '">' + val + '</li>');
-        });
+        		$.each(data, function (key, val) {
+            		items.push('<li id="' + key + '">' + val + '</li>');
+        		});
 
-        $('<ul/>', {
-            'class': 'my-new-list',
-            html: items.join('')
-        }).appendTo('body');
+        		$('<ul/>', {
+            		'class': 'my-new-list',
+            		html: items.join('')
+        		}).appendTo('body');
 
-    });
-</script>
+    		});
+		</script>
 
-<script type="text/javascript">
-    $(document).ready(function(){
+		<script type="text/javascript">
+    		$(document).ready(function(){
  
-    if($("div").size()>0){
-            if (document.createStyleSheet){
-                document.createStyleSheet('style.css');
-            }
-            else {
-                $("head").append($("<link rel='stylesheet' href='style.css' type='text/css' media='screen' />"));
-            }
-        }
-    });
-</script>
+    			if($("div").size()>0){
+            		if (document.createStyleSheet){
+                		document.createStyleSheet('style.css');
+            		}
+            		else {
+                		$("head").append($("<link rel='stylesheet' href='style.css' type='text/css' media='screen' />"));
+            		}
+        		}
+    		});
+		</script>
 
-</head>
-<body>
-<h1>FORUM:</h1>
-<div id="topic"> <span class="title"> Topic 1 - This is a very interesting topic </span>(<a class="btn_link" href="#" title="Get more info" target="_blank">www.link.ca</a>)<br />
-  <span class="points">19 points</span><span class="bar">|</span> <span class="time">1 hour ago</span><span class="bar">|</span> <span class="comments">5 comments</span>
+	</head>
+	<body>
+		<h1>FORUM:</h1>
+		<div id="topic"> <span class="title"> Topic 1 - This is a very interesting topic </span>(<a class="btn_link" href="#" title="Get more info" target="_blank">www.link.ca</a>)<br />
+  		<span class="points">19 points</span><span class="bar">|</span> <span class="time">1 hour ago</span><span class="bar">|</span> <span class="comments">5 comments</span>
   
   
-  <div id="reply"> <span class="time">1 hour</span><span class="bar">|</span><a class="btn_link">link</a><br />
-    <span class="text">Comment about this topic!</span><br />
-    <a class="btn_reply" href="#" title="Reply to this comment">reply</a></span></div>
-<a class="btn_reply" href="#" title="Reply to this topic">reply</a></div>
-</body>
+  		<div id="reply"> <span class="time">1 hour</span><span class="bar">|</span><a class="btn_link">link</a><br />
+    	<span class="text">Comment about this topic!</span><br />
+    	<a class="btn_reply" href="#" title="Reply to this comment">reply</a></span></div>
+		<a class="btn_reply" href="#" title="Reply to this topic">reply</a></div>
+	</body>
 </html>
