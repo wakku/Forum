@@ -81,21 +81,7 @@ fs.readFile(path+'/items.json', 'utf8', function (err,data) {
 
 	});
 
- } else if (request.url == '/usuarios') {
-// open JSON file
-
-	fs = require('fs')
-	console.log("sending usuarios to json")
-	fs.readFile(path+'/usuarios.json', 'utf8', function (err,data) {
-  		if (err) {
-    		return console.log(err);
-  		}
-		console.log(data);
-		response.end(data);
-
-	});
-
- }else {
+ } else {
 
 	fs = require('fs')
 	fs.readFile(path+'/404.html', 'utf8', function (err,data) {

@@ -17,39 +17,7 @@
 
     		});
 		</script>
-		<script type="text/javascript">
-    		 //$('#resultado').html('Carregando dados...');
-			//$.getJSON('/usuarios', function (data) {
-        		//var items2 = [];
-
-        		//items.push('<li id="' + key + '"' + data.usuarios[1].nome + </li>);
-				//items2.push('<li id="' + data.usuarios[1].id + '">' + data.usuarios[1].nome + '</li>');
-				//items2.push('<li id="' + data.usuarios[2].id + '">' + data.usuarios[2].nome + '</li>');
-			//	
-        //		$('<ul/>', {
-      //      		'class': 'my-new-list',
-    //        		html: items2.join('')
-  //      		}).appendTo('body');
-//
-  //  		});
-//		</script>
-		<script type="text/javascript">
-			$.getJSON('/usuarios', function (data) {
-        		var items = [];
-
-        		$.each(data, function (a, b, c) {
-								
-            			items.push('<li id="' + a[0].ircEvent + '">' + a[0].method + '</li>');
-					
-        		});
-
-        		$('<ul/>', {
-            		'class': 'my-new-list',
-            		html: items.join('')
-        		}).appendTo('body');
-
-    		});
-		</script>
+		
 		<script type="text/javascript">
     		$(document).ready(function(){
  
@@ -75,6 +43,5 @@
     	<span class="text">Comment about this topic!</span><br />
     	<a class="btn_reply" href="#" title="Reply to this comment">reply</a></span></div>
 		<a class="btn_reply" href="#" title="Reply to this topic">reply</a></div>
-        <div id="resultado"></div>
 	</body>
 </html>
