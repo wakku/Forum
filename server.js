@@ -22,7 +22,7 @@ http.createServer(function(request, response) {
   		if (err) {
     		return console.log(err);
   		}
-  		console.log(data);
+  		//console.log(data);
   		response.write(data);
   		response.end();
   
@@ -35,7 +35,7 @@ http.createServer(function(request, response) {
   		if (err) {
     		return console.log(err);
   		}
-  		console.log(data);
+  		//console.log(data);
   		response.write(data);
   		response.end();
 	});
@@ -51,7 +51,7 @@ http.createServer(function(request, response) {
   		if (err) {
     		return console.log(err);
 		}
-		console.log(data);
+		//console.log(data);
 		response.write(data);
 		response.end();
 	});
@@ -64,7 +64,7 @@ fs.readFile(path+'/items.json', 'utf8', function (err,data) {
   	if (err) {
     	return console.log(err);
   	}
-
+	console.log("I am uploading json")
 	response.end(data);
 });
 
@@ -88,7 +88,7 @@ fs.readFile(path+'/items.json', 'utf8', function (err,data) {
   		if (err) {
     		return console.log(err);
   		}
-  	console.log(data);
+  	//console.log(data);
   	response.write(data);
   	response.end();
   
