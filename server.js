@@ -1,6 +1,6 @@
 http = require('http');
 fs = require('fs');
-path = 'C:/Users/Vanessa/Desktop/Courses/ProgWeb/Forum';
+path = 'C:/Users/Luiz Felipe/Documents/prog_on_the_web';
 
 PORT = 30930;
 
@@ -47,7 +47,7 @@ http.createServer(function(request, response) {
     // directory.
 
 	fs = require('fs')
-	fs.readFile(path+ 'style.css', 'utf8', function (err,data) {
+	fs.readFile(path+ '/style.css', 'utf8', function (err,data) {
   		if (err) {
     		return console.log(err);
 		}
