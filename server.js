@@ -81,6 +81,20 @@ fs.readFile(path+'/items.json', 'utf8', function (err,data) {
 
 	});
 
+ }else if (request.url == '/topics_forum') {
+	// open JSON file
+
+	fs = require('fs')
+	console.log("sending topics_forum to json")
+	fs.readFile(path+'/topics_forum.json', 'utf8', function (err,data) {
+  		if (err) {
+    		return console.log(err);
+  		}
+		console.log(data);
+		response.end(data);
+
+	});
+
  } else {
 
 	fs = require('fs')

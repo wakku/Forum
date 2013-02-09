@@ -2,8 +2,10 @@
 	<head>
 		<script src="/static/jquery.min.js"></script>
 		<link href="style.css" rel="stylesheet" type="text/css">
+		<!-- author: felipe, message: We dont need that in the project, but it might be useful for something else-->
 		<script type="text/javascript">
-    		$.getJSON('/topics', function (data) {
+			
+    		/*$.getJSON('/topics', function (data) {
         		var items = [];
 
         		$.each(data, function (key, val) {
@@ -15,7 +17,7 @@
             		html: items.join('')
         		}).appendTo('body');
 
-    		});
+    		});*/
 		</script>
 		
 		<script type="text/javascript">
@@ -31,17 +33,32 @@
         		}
     		});
 		</script>
-
+        <!-- author: felipe, message: script responsable for populating the main page-->
+		<script>
+			function populate(){
+				var result = [];
+				var size;
+				$.getJSON('/topics_forum', function (data) {
+				size = data.length;
+				for(i = 0; i < size; i++){
+					//result.push('<li id="' + i + '">' + data[i].method + '</li>');
+					result.push('<div id="' + data[i].id + '"> <span class="title">' + data[i].topic + '</span> (<a class="btn_link" href="#" title="Get more info" target="_blank">'+data[i].link+'</a>)<br /> <span class="points">'+data[i].points+' points </span> <span class="bar">|</span> <span class="time">'+data[i].hours_ago+' hours ago</span><span class="bar">|</span> <span class="comments">'+data[i].comments+' comments</span> <br /><a class="btn_reply" href="#" title="Reply to this comment">reply</a><br /><br />');																									
+				}
+				$('<ul/>', {
+					'class': 'my-new-list',
+					 html: result.join('')
+					 }).appendTo('body');
+				 });
+			}	
+   		</script>
 	</head>
 	<body>
 		<h1>FORUM:</h1>
-		<div id="topic"> <span class="title"> Topic 1 - This is a very interesting topic </span>(<a class="btn_link" href="#" title="Get more info" target="_blank">www.link.ca</a>)<br />
-  		<span class="points">19 points</span><span class="bar">|</span> <span class="time">1 hour ago</span><span class="bar">|</span> <span class="comments">5 comments</span>
   
-  
-  		<div id="reply"> <span class="time">1 hour</span><span class="bar">|</span><a class="btn_link">link</a><br />
-    	<span class="text">Comment about this topic!</span><br />
-    	<a class="btn_reply" href="#" title="Reply to this comment">reply</a></span></div>
-		<a class="btn_reply" href="#" title="Reply to this topic">reply</a></div>
+        <script type="text/javascript">
+			populate();
+			change_tag();
+	 	</script>
+        <div id="resultado"></div>
 	</body>
 </html>
