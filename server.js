@@ -1,6 +1,6 @@
 http = require('http');
 fs = require('fs');
-path = 'C:/Users/Ystallonne/Documents/GitHub/Forum';
+path = __dirname;
 
 PORT = 30930;
 
