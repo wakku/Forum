@@ -7,18 +7,18 @@ h1 {
 	text-align: left;
 }
 .arrow-up {
-	margin-left: -20px;
-	width: 20px;
-	display: inline-block;
-	color: #999;
-	cursor: pointer;
+margin-left: -20px;
+width: 20px;
+display: inline-block;
+color: #999;
+cursor: pointer;
 }
 .arrow-down {
-	margin-left: -20px;
-	width: 20px;
-	display: inline-block;
-	color: #999;
-	cursor: pointer;
+margin-left: -20px;
+width: 20px;
+display: inline-block;
+color: #999;
+cursor: pointer;
 }
 .topic {
 	font-family: Tahoma, Geneva, sans-serif;
@@ -26,9 +26,9 @@ h1 {
 	padding: 3px 10px 3px 25px;
 	margin-top: 2px;
 	background-color: #f6f6ef;
- //background-color: #FFC;
- //background: #E5E5E5;
- //cursor: pointer;
+	//background-color: #FFC;
+	//background: #E5E5E5;
+	//cursor: pointer;
 }
 .topic .title {
 	font-weight: bold;
@@ -62,7 +62,9 @@ a.btn_link:link {
 	display: block;
 	padding-left: 5px;
 	padding-right: 10px;
-	padding-bottom: 5px;
+	padding-bottom: 10px;
+	padding-top: 10px;
+
 }
 .reply .btn_reply {
 	background-color: #f6f6ef;
