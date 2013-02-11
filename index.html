@@ -30,7 +30,7 @@ function populate() {
 				size = data.length;
 			for(i = 0; i < size; i++){
 					//result.push('<li id="' + i + '">' + data[i].method + '</li>');
-					result.push('<div class="topic"><div class="arrow-up">&#9650;</div><div class="arrow-down">&#9660;</div><span class="title"> Topic 1 - This is a very interesting topic</span>(<a class="btn_link" href="http://www.google.ca" title="Get more info" target="_blank">www.google.ca</a>)<br /><span class="points">19 points</span><span class="bar">|</span> <span class="time">1 hour ago</span><span class="bar">|</span> <span class="comments">5 comments</span> </div><div class="reply"><div class="topic"><div class="arrow-up">&#9650;</div><div class="arrow-down">&#9660;</div><span class="time">1 hour</span><span class="bar">|</span><a class="btn_link" href="#" title="Get more info" target="_blank">link</a><br /></div><div class="reply"><span class="text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed nec purus in ante pretium blandit. Aliquam erat volutpat. Nulla libero lectus.</span><div class="btn_reply"> <a href="#" title="Reply to this comment">reply</a> </div><div class="replyForm"><textarea name="comment" id="comment" rows="5" cols="45"></textarea><br /><input type="submit" name="add comment" id="addComment" value="add comment"></div></div><div class="btn_reply"> <a href="#" title="Reply to this topic">reply</a> </div><div class="replyForm"><textarea name="comment" id="comment" rows="5" cols="45"></textarea><br /><input type="submit" name="add comment" id="addComment" value="add comment"></div></div>');																									
+					result.push('<div class="topic"><div class="arrow-up">&#9650;</div><div class="arrow-down">&#9660;</div><span class="title"> Topic 1 - This is a very interesting topic</span>(<a class="btn_link" href="http://www.google.ca" title="Get more info" target="_blank">www.google.ca</a>)<br /><span class="points">19 points</span><span class="bar">|</span> <span class="time">1 hour ago</span><span class="bar">|</span> <span class="comments">5 comments</span> </div><div class="reply"><div class="topic"><div class="arrow-up">&#9650;</div><div class="arrow-down">&#9660;</div><span class="time">1 hour</span><span class="bar">|</span><a class="btn_link" href="#" title="Get more info" target="_blank">link</a><br /></div><div class="reply"><span class="text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed nec purus in ante pretium blandit. Aliquam erat volutpat. Nulla libero lectus.</span><div class="btn_reply"> <a href="#" title="Reply to this comment">reply</a> </div><div class="replyForm"><textarea name="comment" id="comment" rows="5" cols="45"></textarea><br /><input type="button" name="add comment" id="addComment" value="add comment"></div></div><div class="btn_reply"> <a href="#" title="Reply to this topic">reply</a> </div><div class="replyForm"><textarea name="comment" id="comment" rows="5" cols="45"></textarea><br /><input type="button" name="add comment" id="addComment" value="add comment"></div></div>');																									
 				}
 
 				$('<ul/>', {
@@ -43,7 +43,7 @@ function populate() {
    		</script>
 <script>
 $(document).ready(function() {
-$('h1').append('<div class="topic"><div class="arrow-up">&#9650;</div><div class="arrow-down">&#9660;</div><span class="title"> Topic 1 - This is a very interesting topic</span>(<a class="btn_link" href="http://www.google.ca" title="Get more info" target="_blank">www.google.ca</a>)<br /><span class="points">19 points</span><span class="bar">|</span> <span class="time">1 hour ago</span><span class="bar">|</span> <span class="comments">5 comments</span> </div><div class="reply"><div class="topic"><div class="arrow-up">&#9650;</div><div class="arrow-down">&#9660;</div><span class="time">1 hour</span><span class="bar">|</span><a class="btn_link" href="#" title="Get more info" target="_blank">link</a><br /></div><div class="reply"><span class="text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed nec purus in ante pretium blandit. Aliquam erat volutpat. Nulla libero lectus.</span><div class="btn_reply"> <a href="#" title="Reply to this comment">reply</a> </div><div class="replyForm"><textarea name="comment" id="comment" rows="5" cols="45"></textarea><br /><input type="submit" name="add comment" id="addComment" value="add comment"></div></div><div class="btn_reply"> <a href="#" title="Reply to this topic">reply</a> </div><div class="replyForm"><textarea name="comment" maxlength = "140" id="comment" rows="5" cols="45"></textarea><br /><input type="submit" name="add comment" id="addComment" value="add comment"></div></div>');
+$('h1').append('<div class="topic"><div class="arrow-up">&#9650;</div><div class="arrow-down">&#9660;</div><span class="title"> Topic 1 - This is a very interesting topic</span>(<a class="btn_link" href="http://www.google.ca" title="Get more info" target="_blank">www.google.ca</a>)<br /><span class="points">19 points</span><span class="bar">|</span> <span class="time">1 hour ago</span><span class="bar">|</span> <span class="comments">5 comments</span> </div><div class="reply"><div class="topic"><div class="arrow-up">&#9650;</div><div class="arrow-down">&#9660;</div><span class="time">1 hour</span><span class="bar">|</span><a class="btn_link" href="#" title="Get more info" target="_blank">link</a><br /></div><div class="reply"><span class="text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed nec purus in ante pretium blandit. Aliquam erat volutpat. Nulla libero lectus.</span><div class="btn_reply"> <a href="#" title="Reply to this comment">reply</a> </div><div class="replyForm"><textarea name="comment" id="comment" rows="5" cols="45"></textarea><br /><input type="button" name="add comment" id="addComment" value="add comment"></div></div><div class="btn_reply"> <a href="#" title="Reply to this topic">reply</a> </div><div class="replyForm"><textarea name="comment" maxlength = "140" id="comment" rows="5" cols="45"></textarea><br /><input type="button" name="add comment" id="addComment" value="add comment"></div></div>');
 
     $(".reply").hide();
     $(".arrow-up").hide();
@@ -63,13 +63,12 @@ $(document).ready(function() {
 });
 
 </script>
-
 <script>
 $(document).ready(function() {
 
 $("#addComment").click(function () {
 	var insertCommentText = $("#comment:last").val();
-       $('.text:last').append('<div class="topic"><div class="arrow-up">&#9650;</div><div class="arrow-down">&#9660;</div><span class="time">1 hour</span><span class="bar">|</span><a class="btn_link" href="#" title="Get more info" target="_blank">link</a><br /></div><div class="reply"><span class="text">'+insertCommentText+'</span><div class="btn_reply"> <a href="#" title="Reply to this comment">reply</a> </div><div class="replyForm"><textarea name="comment" id="comment" rows="5" cols="45"></textarea><br /><input type="submit" name="add comment" id="addComment" value="add comment"></div>');
+       $('.reply ~ .btn_reply').append('<div class="topic"><div class="arrow-up">&#9650;</div><div class="arrow-down">&#9660;</div><span class="time">1 hour</span><span class="bar">|</span><a class="btn_link" href="#" title="Get more info" target="_blank">link</a><br /></div><div class="reply"><span class="text">'+insertCommentText+'</span><div class="btn_reply"> <a href="#" title="Reply to this comment">reply</a> </div><div class="replyForm"><textarea name="comment" id="comment" rows="5" cols="45"></textarea><br /><input type="button" name="add comment" id="addComment" value="add comment"></div>');
 });
 });
 </script>
@@ -95,7 +94,7 @@ $("#addComment").click(function () {
     <form name="form1" method="post" action="">
       <textarea name="comment" id="comment" rows="5" cols="45"></textarea>
       <br />
-      <input type="submit" name="add comment" id="addComment" value="add comment">
+      <input type="button" name="add comment" id="addComment" value="add comment">
     </form>
   </div>
   
@@ -109,7 +108,7 @@ $("#addComment").click(function () {
     
       <textarea name="comment" id="comment" rows="5" cols="45"></textarea>
       <br />
-      <input type="submit" name="add comment" id="addComment" value="add comment">
+      <input type="button" name="add comment" id="addComment" value="add comment">
     
   </div>
 
@@ -121,10 +120,18 @@ $("#addComment").click(function () {
   
     <textarea name="comment" id="comment" rows="5" cols="45"></textarea>
     <br />
-    <input type="submit" name="add comment" id="addComment" value="add comment">
+    <input type="button" name="add comment" id="addComment" value="add comment">
   
 </div>
 </div>-->
+
+<script type="text/javascript">
+function postar(){
+	
+}
+</script>
+
+<input name="addComment" type="button" value="add comment" class="addComment" onClick="postar()">
 
 </body>
 </html>
