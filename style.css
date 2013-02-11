@@ -1,6 +1,10 @@
 h1 {
-	font-size: 14px;
-	color: #00F;
+	border-left: 2px solid #DBD4C7;
+	padding-left: 1em;
+	font-size: 1em;
+	width: 600px;
+	margin: 20px 0 20px 0;
+	text-align: left;
 }
 .arrow-up {
 	margin-left: -20px;
