@@ -1,130 +1,144 @@
-<!doctype html>
-<html>
-<head>
-<meta charset="utf-8">
-<title>FORUM - Programming on the web</title>
-<link href="favicon.ico" rel="icon" type="image/x-icon" />
-<link href="style.css" rel="stylesheet" type="text/css">
-<script class="jsbin" src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
-<!--<script type="text/javascript">
-    $.getJSON('/topics', function (data) {
-        var items = [];
-
-        $.each(data, function (key, val) {
-            items.push('<li id="' + key + '">' + val + '</li>');
-        });
-
-        $('<ul/>', {
-            'class': 'my-new-list',
-            html: items.join('')
-        }).appendTo('body');
-
-    });
-</script>-->
-
-<script>
-function populate() {
-				var result = [];
-				var size;
-				$.getJSON('/topics_forum', function (data) {
-				size = data.length;
-			for(i = 0; i < size; i++){
-					//result.push('<li id="' + i + '">' + data[i].method + '</li>');
-					result.push('<div class="topic"><div class="arrow-up">&#9650;</div><div class="arrow-down">&#9660;</div><span class="title"> Topic 1 - This is a very interesting topic</span>(<a class="btn_link" href="http://www.google.ca" title="Get more info" target="_blank">www.google.ca</a>)<br /><span class="points">19 points</span><span class="bar">|</span> <span class="time">1 hour ago</span><span class="bar">|</span> <span class="comments">5 comments</span> </div><div class="reply"><div class="topic"><div class="arrow-up">&#9650;</div><div class="arrow-down">&#9660;</div><span class="time">1 hour</span><span class="bar">|</span><a class="btn_link" href="#" title="Get more info" target="_blank">link</a><br /></div><div class="reply"><span class="text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed nec purus in ante pretium blandit. Aliquam erat volutpat. Nulla libero lectus.</span><div class="btn_reply"> <a href="#" title="Reply to this comment">reply</a> </div><div class="replyForm"><textarea name="comment" id="comment" rows="5" cols="45"></textarea><br /><input type="submit" name="add comment" id="addComment" value="add comment"></div></div><div class="btn_reply"> <a href="#" title="Reply to this topic">reply</a> </div><div class="replyForm"><textarea name="comment" id="comment" rows="5" cols="45"></textarea><br /><input type="submit" name="add comment" id="addComment" value="add comment"></div></div>');																									
-				}
-
-				$('<ul/>', {
-					'class': 'my-new-list',
-					 html: result.join('')
-					 }).appendTo('body');
-
-});
-}
-   		</script>
-<script>
-$(document).ready(function() {
-$('h1').append('<div class="topic"><div class="arrow-up">&#9650;</div><div class="arrow-down">&#9660;</div><span class="title"> Topic 1 - This is a very interesting topic</span>(<a class="btn_link" href="http://www.google.ca" title="Get more info" target="_blank">www.google.ca</a>)<br /><span class="points">19 points</span><span class="bar">|</span> <span class="time">1 hour ago</span><span class="bar">|</span> <span class="comments">5 comments</span> </div><div class="reply"><div class="topic"><div class="arrow-up">&#9650;</div><div class="arrow-down">&#9660;</div><span class="time">1 hour</span><span class="bar">|</span><a class="btn_link" href="#" title="Get more info" target="_blank">link</a><br /></div><div class="reply"><span class="text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed nec purus in ante pretium blandit. Aliquam erat volutpat. Nulla libero lectus.</span><div class="btn_reply"> <a href="#" title="Reply to this comment">reply</a> </div><div class="replyForm"><textarea name="comment" id="comment" rows="5" cols="45"></textarea><br /><input type="submit" name="add comment" id="addComment" value="add comment"></div></div><div class="btn_reply"> <a href="#" title="Reply to this topic">reply</a> </div><div class="replyForm"><textarea name="comment" maxlength = "140" id="comment" rows="5" cols="45"></textarea><br /><input type="submit" name="add comment" id="addComment" value="add comment"></div></div>');
-
-    $(".reply").hide();
-    $(".arrow-up").hide();
-    $(".topic").click(function(){
-            $(this).next(".reply").slideToggle(500);
-            $(this).find(".arrow-up, .arrow-down").toggle();
-    });
-});
-</script>
-
-<script>
-$(document).ready(function() {
-    $(".replyForm").hide();
-    $(".btn_reply").click(function(){
-            $(this).next(".replyForm").slideToggle(500);
-    });
-});
-
-</script>
-
-<script>
-$(document).ready(function() {
-
-$("#addComment").click(function () {
-	var insertCommentText = $("#comment:last").val();
-       $('.text:last').append('<div class="topic"><div class="arrow-up">&#9650;</div><div class="arrow-down">&#9660;</div><span class="time">1 hour</span><span class="bar">|</span><a class="btn_link" href="#" title="Get more info" target="_blank">link</a><br /></div><div class="reply"><span class="text">'+insertCommentText+'</span><div class="btn_reply"> <a href="#" title="Reply to this comment">reply</a> </div><div class="replyForm"><textarea name="comment" id="comment" rows="5" cols="45"></textarea><br /><input type="submit" name="add comment" id="addComment" value="add comment"></div>');
-});
-});
-</script>
-
-</head>
-<body>
-<h1>FORUM - Programming on the web</h1>
-
-<!-- Topic with two levels of comments --> 
-<!--<div class="topic">
-  <div class="arrow-up">&#9650;</div>
-  <div class="arrow-down">&#9660;</div>
-  <span class="title"> Topic 1 - This is a very interesting topic</span>(<a class="btn_link" href="http://www.google.ca" title="Get more info" target="_blank">www.google.ca</a>)<br />
-  <span class="points">19 points</span><span class="bar">|</span> <span class="time">1 hour ago</span><span class="bar">|</span> <span class="comments">5 comments</span> </div>
-<div class="reply">
-  <div class="topic">
-    <div class="arrow-up">&#9650;</div>
-    <div class="arrow-down">&#9660;</div>
-    <span class="time">1 hour</span><span class="bar">|</span><a class="btn_link" href="#" title="Get more info" target="_blank">link</a><br />
-  </div>
-  <div class="reply"><span class="text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed nec purus in ante pretium blandit. Aliquam erat volutpat. Nulla libero lectus.</span><div class="btn_reply"> <a href="#" title="Reply to this comment">reply</a> </div>
-  <div class="replyForm">
-    <form name="form1" method="post" action="">
-      <textarea name="comment" id="comment" rows="5" cols="45"></textarea>
-      <br />
-      <input type="submit" name="add comment" id="addComment" value="add comment">
-    </form>
-  </div>
-  
-  <div class="topic">
-    <div class="arrow-up">&#9650;</div>
-    <div class="arrow-down">&#9660;</div>
-    <span class="time">1 hour</span><span class="bar">|</span><a class="btn_link" href="#" title="Get more info" target="_blank">link</a><br />
-  </div>
-  <div class="reply"><span class="text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed nec purus in ante pretium blandit. Aliquam erat volutpat. Nulla libero lectus.</span><div class="btn_reply"> <a href="#" title="Reply to this comment">reply</a> </div>
-  <div class="replyForm">
-    
-      <textarea name="comment" id="comment" rows="5" cols="45"></textarea>
-      <br />
-      <input type="submit" name="add comment" id="addComment" value="add comment">
-    
-  </div>
-
-  
-  
-  </div>
-  <div class="btn_reply"> <a href="#" title="Reply to this topic">reply</a> </div>
-<div class="replyForm">
-  
-    <textarea name="comment" id="comment" rows="5" cols="45"></textarea>
-    <br />
-    <input type="submit" name="add comment" id="addComment" value="add comment">
-  
-</div>
-</div>-->
-
-</body>
-</html>
+  <!doctype html>
+  <html>
+  <head>
+  <meta charset="utf-8">
+  <title>FORUM - Programming on the web</title>
+  <link href="favicon.ico" rel="icon" type="image/x-icon" />
+  <link href="style2.css" rel="stylesheet" type="text/css">
+  <script class="jsbin" src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
+  <script>
+	  function populate() {
+	  var result = [];
+	  var size;
+	  $.getJSON('/topics_forum', function (data) {
+	  size = data.length;
+	  for(i = 0; i < size; i++){
+		  //result.push('<li id="' + i + '">' + data[i].method + '</li>');
+		  result.push('<div class="topic"><div class="arrow-up">&#9650;</div><div class="arrow-down">&#9660;</div><span class="title"> Topic 1 - This is a very interesting topic</span>(<a class="btn_link" href="http://www.google.ca" title="Get more info" target="_blank">www.google.ca</a>)<br /><span class="points">19 points</span><span class="bar">|</span> <span class="time">1 hour ago</span><span class="bar">|</span> <span class="comments">5 comments</span> </div><div class="reply"><div class="topic"><div class="arrow-up">&#9650;</div><div class="arrow-down">&#9660;</div><span class="time">1 hour</span><span class="bar">|</span><a class="btn_link" href="#" title="Get more info" target="_blank">link</a><br /></div><div class="reply"><span class="text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed nec purus in ante pretium blandit. Aliquam erat volutpat. Nulla libero lectus.</span><div class="btn_reply"> <a href="#" title="Reply to this comment">reply</a> </div><div class="replyForm"><textarea name="comment" id="comment" rows="5" cols="45"></textarea><br /><input type="submit" name="add comment" class="addComment" value="add comment"></div></div><div class="btn_reply"> <a href="#" title="Reply to this topic">reply</a> </div><div class="replyForm"><textarea name="comment" id="comment" rows="5" cols="45"></textarea><br /><input type="submit" name="add comment" class="addComment" value="add comment"></div></div>');	
+		  }
+		  $('<ul/>', {
+		  'class': 'my-new-list',
+		  html: result.join('')
+		  }).appendTo('body');
+		  });
+		  }
+  </script>
+  <script>
+	  $(document).ready(function() {
+	  $('h1').append('<div class="topic"><div class="arrow-up">&#9650;</div><div class="arrow-down">&#9660;</div><span class="title"> Topic 1 - This is a very interesting topic</span>(<a class="btn_link" href="http://www.google.ca" title="Get more info" target="_blank">www.google.ca</a>)<br /><span class="points">19 points</span><span class="bar">|</span> <span class="time">1 hour ago</span><span class="bar">|</span> <span class="comments">5 comments</span> </div><div class="reply"><div class="topic"><div class="arrow-up">&#9650;</div><div class="arrow-down">&#9660;</div><span class="time">1 hour</span><span class="bar">|</span><a class="btn_link" href="#" title="Get more info" target="_blank">link</a><br /></div><div class="reply"><span class="text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed nec purus in ante pretium blandit. Aliquam erat volutpat. Nulla libero lectus.</span><div class="btn_reply"> <a href="#" title="Reply to this comment">reply</a> </div><div class="replyForm"><textarea name="comment" id="comment" rows="5" cols="45"></textarea><br /><input type="submit" name="add comment" class="addComment" value="add comment"></div></div></div>');
+	  $(".reply").hide();
+	  $(".arrow-up").hide();
+	  
+	  $(".topic").click(function(){
+	  $(this).next(".reply").slideToggle(500);
+	  $(this).find(".arrow-up, .arrow-down").toggle();
+	  });
+	  
+	  });
+  </script>
+  <script>
+	  $(document).ready(function() {
+	  $(".replyForm").hide();
+	  $(".btn_reply").click(function(){
+	  $(this).next(".replyForm").slideToggle(500);
+	  });
+	  });
+  </script>
+  <script>
+	  function insertComment(obj){
+		  var topic = document.createElement('div');
+		  topic.setAttribute('class', 'topic');
+		  var theDiv = document.createElement('div');
+		  var theComment = obj.previousSibling.previousSibling;
+		  <!-- Comment starts here -->
+		  var arrowUp = document.createElement('div');
+		  arrowUp.setAttribute('class', 'arrow-up');
+		  var textArrowUp = document.createTextNode('▲');
+		  arrowUp.appendChild(textArrowUp);
+		  var arrowDown = document.createElement('div');
+		  arrowDown.setAttribute('class', 'arrow-down');
+		  var textArrowDown = document.createTextNode('▼');
+		  arrowDown.appendChild(textArrowDown);
+		  var timeSpan = document.createElement('span');
+		  timeSpan.setAttribute('class', 'time');
+		  var textTimeSpan = document.createTextNode('1 hour ago');
+		  timeSpan.appendChild(textTimeSpan);
+		  var barSpan = document.createElement('span');
+		  barSpan.setAttribute('class', 'bar');
+		  var textBarSpan = document.createTextNode('|');
+		  barSpan.appendChild(textBarSpan);
+		  var linkComment = document.createElement('a');
+		  linkComment.setAttribute('class', 'btn_link');
+		  linkComment.setAttribute('href', '#');
+		  linkComment.setAttribute('title', 'Get more info');
+		  linkComment.setAttribute('target', '_blank');
+		  var textLinkComment = document.createTextNode('link');
+		  linkComment.appendChild(textLinkComment);
+		  var reply = document.createElement('div');
+		  reply.setAttribute('class', 'reply');
+		  var textSpan = document.createElement('span');
+		  textSpan.setAttribute('class', 'bar');
+		  var theText = document.createTextNode(theComment.value);<!-- The typed comment goes here -->
+		  textSpan.appendChild(theText);
+		  var btnReply = document.createElement('div');
+		  btnReply.setAttribute('class', 'btn_reply');
+		  var linkReply = document.createElement('a');
+		  linkReply.setAttribute('href', '#');
+		  linkReply.setAttribute('title', 'Reply to this comment');
+		  linkReply.setAttribute('target', '_blank');
+		  var textLinkReply = document.createTextNode('reply');
+		  linkReply.appendChild(textLinkReply);
+		  var replyForm = document.createElement('div');
+		  replyForm.setAttribute('class', 'replyForm');
+		  var theTextArea = document.createElement('textarea');
+		  theTextArea.rows = 4;
+		  theTextArea.cols = 45;
+		  theTextArea.maxLength = 140;
+		  var theInput = document.createElement('input');
+		  theInput.setAttribute('type','text');
+		  theInput.setAttribute('type','submit');
+		  theInput.setAttribute('class','addComment');
+		  theInput.setAttribute('value','add comment');
+		  theInput.setAttribute('name','add comment');
+		  replyForm.appendChild(theTextArea);
+		  replyForm.appendChild(document.createElement('br'));
+		  replyForm.appendChild(theInput);
+		  theInput.setAttribute("onclick", "insertComment(this)");
+		  theDiv.setAttribute('class','div.comment');
+		  theDiv.appendChild(arrowUp);
+		  theDiv.appendChild(arrowDown);
+		  theDiv.appendChild(timeSpan);
+		  theDiv.appendChild(barSpan);
+		  theDiv.appendChild(linkComment);
+		  theDiv.appendChild(document.createElement('br'));
+		  theDiv.appendChild(reply);
+		  theDiv.appendChild(textSpan);
+		  theDiv.appendChild(document.createElement('br'));
+		  theDiv.appendChild(btnReply);
+		  theDiv.appendChild(linkReply);
+		  theDiv.appendChild(replyForm);
+		  topic.appendChild(theDiv);
+		  obj.parentNode.appendChild(topic);
+	  }
+	  $(document).ready(function() {
+	  $(".addComment").click(function () {
+	  insertComment($(this)[0]);
+	  var insertCommentText = $("#comment").val();
+	  });
+	  });
+  </script>
+  </head>
+  <body>
+      <h1>FORUM - Programming on the web</h1>
+      <!-- Topic with two levels of comments --> 
+      <div class="topic">
+      <div class="arrow-up">&#9650;</div>
+      <div class="arrow-down">&#9660;</div>
+      <span class="title"> Topic 1 - This is a very interesting topic</span>(<a class="btn_link" href="http://www.google.ca" title="Get more info" target="_blank">www.google.ca</a>)<br />
+      <span class="points">19 points</span><span class="bar">|</span> <span class="time">1 hour ago</span><span class="bar">|</span> <span class="comments">5 comments</span> </div>
+      <div class="reply">
+      <div ><textarea name="comment" id="comment" rows="4" cols="45" maxLength="140"></textarea><br /><input type="submit" name="add comment" class="addComment" value="add comment"></input>
+      </div>
+      </div>
+  </body>
+  </html>
