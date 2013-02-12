@@ -1,12 +1,12 @@
-  <!doctype html>
-  <html>
-  <head>
-  <meta charset="utf-8">
-  <title>FORUM - Programming on the web</title>
-  <link href="favicon.ico" rel="icon" type="image/x-icon" />
-  <link href="style.css" rel="stylesheet" type="text/css">
-  <script class="jsbin" src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
-  <script>
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>FORUM - Programming on the web</title>
+<link href="favicon.ico" rel="icon" type="image/x-icon" />
+<link href="style.css" rel="stylesheet" type="text/css">
+<script class="jsbin" src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
+<script>
 	  function populate() {
 	  var result = [];
 	  var size;
@@ -23,7 +23,7 @@
 		  });
 		  }
   </script>
-  <script>
+<script>
 	  $(document).ready(function() {
 	  $('h1').append('<div class="topic"><div class="arrow-up">&#9650;</div><div class="arrow-down">&#9660;</div><span class="title"> Topic 1 - This is a very interesting topic</span>(<a class="btn_link" href="http://www.google.ca" title="Get more info" target="_blank">www.google.ca</a>)<br /><span class="points">19 points</span><span class="bar">|</span> <span class="time">1 hour ago</span><span class="bar">|</span> <span class="comments">5 comments</span> </div><div class="reply"><div class="topic"><div class="arrow-up">&#9650;</div><div class="arrow-down">&#9660;</div><span class="time">1 hour</span><span class="bar">|</span><a class="btn_link" href="#" title="Get more info" target="_blank">link</a><br /></div><div class="reply"><span class="text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed nec purus in ante pretium blandit. Aliquam erat volutpat. Nulla libero lectus.</span><div class="btn_reply"> <a href="#" title="Reply to this comment">reply</a> </div><div class="replyForm"><textarea name="comment" id="comment" rows="5" cols="45"></textarea><br /><input type="submit" name="add comment" class="addComment" value="add comment"></div></div></div>');
 	  $(".reply").hide();
@@ -36,7 +36,7 @@
 	  
 	  });
   </script>
-  <script>
+<script>
 	  $(document).ready(function() {
 	  $(".replyForm").hide();
 	  $(".btn_reply").click(function(){
@@ -44,7 +44,7 @@
 	  });
 	  });
   </script>
-  <script>
+<script>
 	  function insertComment(obj){
 		  var topic = document.createElement('div');
 		  topic.setAttribute('class', 'topic');
@@ -121,24 +121,15 @@
 		  obj.parentNode.appendChild(topic);
 	  }
 	  $(document).ready(function() {
-	  $(".addComment").click(function () {
-	  insertComment($(this)[0]);
-	  var insertCommentText = $("#comment").val();
-	  });
+		  $(".addComment").click(function () {
+			  insertComment($(this)[0]);
+			  var insertCommentText = $("#comment").val();
+			  //$('.replyForm').hide();
+		  });
 	  });
   </script>
-  </head>
-  <body>
-      <h1>FORUM - Programming on the web</h1>
-      <!-- Topic with two levels of comments --> 
-      <div class="topic">
-      <div class="arrow-up">&#9650;</div>
-      <div class="arrow-down">&#9660;</div>
-      <span class="title"> Topic 1 - This is a very interesting topic</span>(<a class="btn_link" href="http://www.google.ca" title="Get more info" target="_blank">www.google.ca</a>)<br />
-      <span class="points">19 points</span><span class="bar">|</span> <span class="time">1 hour ago</span><span class="bar">|</span> <span class="comments">5 comments</span> </div>
-      <div class="reply">
-      <div ><textarea name="comment" id="comment" rows="4" cols="45" maxLength="140"></textarea><br /><input type="submit" name="add comment" class="addComment" value="add comment"></input>
-      </div>
-      </div>
-  </body>
-  </html>
+</head>
+<body>
+<h1>FORUM - Programming on the web</h1>
+</body>
+</html>
