@@ -24,3 +24,5 @@ The most commonly used git commands are:
    To learn how to merge: http://www.youtube.com/watch?v=RDGzF2M-zlo
    
    First, create your branch, make your changes, then merge. DO NOT write direct on branch master.
+   
+   Eu coloquei uma linha.
