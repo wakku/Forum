@@ -48,6 +48,8 @@
 	  function insertComment(obj){
 		  var topic = document.createElement('div');
 		  topic.setAttribute('class', 'topic');
+		  var ident = document.createElement('span');
+		  <!-- TODO: We need somehow make this span padding 25px to ident the comments -->
 		  var theDiv = document.createElement('div');
 		  var theComment = obj.previousSibling.previousSibling;
 		  <!-- Comment starts here -->
@@ -85,7 +87,6 @@
 		  var linkReply = document.createElement('a');
 		  linkReply.setAttribute('href', '#');
 		  linkReply.setAttribute('title', 'Reply to this comment');
-		  linkReply.setAttribute('target', '_blank');
 		  var textLinkReply = document.createTextNode('reply');
 		  linkReply.appendChild(textLinkReply);
 		  var replyForm = document.createElement('div');
@@ -117,19 +118,23 @@
 		  theDiv.appendChild(btnReply);
 		  theDiv.appendChild(linkReply);
 		  theDiv.appendChild(replyForm);
-		  topic.appendChild(theDiv);
-		  obj.parentNode.appendChild(topic);
+		  ident.appendChild(theDiv);
+		  topic.appendChild(ident);
+		  obj.parentNode.parentNode.parentNode.appendChild(topic);
 	  }
 	  $(document).ready(function() {
 		  $(".addComment").click(function () {
 			  insertComment($(this)[0]);
 			  var insertCommentText = $("#comment").val();
-			  //$('.replyForm').hide();
+			  $('.replyForm').hide();
 		  });
 	  });
   </script>
 </head>
 <body>
 <h1>FORUM - Programming on the web</h1>
+
+<div class="topic"><div class="arrow-up">&#9650;</div><div class="arrow-down">&#9660;</div><span class="title"> Topic 1 - This is a very interesting topic</span>(<a class="btn_link" href="http://www.google.ca" title="Get more info" target="_blank">www.google.ca</a>)<br /><span class="points">19 points</span><span class="bar">|</span> <span class="time">1 hour ago</span><span class="bar">|</span> <span class="comments">5 comments</span> </div><div class="reply"><div class="topic"><div class="arrow-up">&#9650;</div><div class="arrow-down">&#9660;</div><span class="time">1 hour</span><span class="bar">|</span><a class="btn_link" href="#" title="Get more info" target="_blank">link</a><br /></div><div class="reply"><span class="text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed nec purus in ante pretium blandit. Aliquam erat volutpat. Nulla libero lectus.</span><div class="btn_reply"> <a href="#" title="Reply to this comment">reply</a> </div><div class="replyForm"><textarea name="comment" id="comment" rows="5" cols="45"></textarea><br /><input type="submit" name="add comment" class="addComment" value="add comment"></div></div></div>
+
 </body>
 </html>
