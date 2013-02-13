@@ -1,6 +1,6 @@
 http = require('http');
 fs = require('fs');
-path = 'C:/Users/Ystallonne/Documents/GitHub/Forum';
+path = __dirname;
 
 PORT = 30930;
 
@@ -68,20 +68,7 @@ fs.readFile(path+'/items.json', 'utf8', function (err,data) {
 	response.end(data);
 });
 
- } else if (request.url == '/topics') {
-
-
-	fs = require('fs')
-	fs.readFile(path+'/style.css', 'utf8', function (err,data) {
-  		if (err) {
-    		return console.log(err);
-  		}
-
-		response.end(data);
-
-	});
-
- }else if (request.url == '/topics_forum') {
+ } else if (request.url == '/topics_forum') {
 	// open JSON file
 
 	fs = require('fs')

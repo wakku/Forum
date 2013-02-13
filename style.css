@@ -1,6 +1,10 @@
 h1 {
-	font-size: 14px;
-	color: #00F;
+	border-left: 2px solid #DBD4C7;
+	padding-left: 1em;
+	font-size: 1em;
+	width: 600px;
+	margin: 20px 0px;
+	text-align: left;
 }
 .arrow-up {
 	margin-left: -20px;
@@ -22,16 +26,10 @@ h1 {
 	padding: 3px 10px 3px 25px;
 	margin-top: 2px;
 	background-color: #f6f6ef;
- //background-color: #FFC;
- //background: #E5E5E5;
- //cursor: pointer;
 }
 .topic .title {
 	font-weight: bold;
 	padding-right: 5px;
-}
-a.btn_link:link {
-	color: #999;
 }
 .topic .points {
 	padding-left: 5px;
@@ -42,6 +40,9 @@ a.btn_link:link {
 }
 .reply .time, .reply .btn_link {
 	font-size: 12px;
+	color: #999;
+}
+a.btn_link:link {
 	color: #999;
 }
 .topic .bar, .reply .bar {
@@ -59,8 +60,7 @@ a.btn_link:link {
 	padding-left: 5px;
 	padding-right: 10px;
 	padding-bottom: 10px;
-		padding-top: 10px;
-	
+	padding-top: 10px;
 }
 .reply .btn_reply {
 	background-color: #f6f6ef;
@@ -74,4 +74,7 @@ a.btn_link:link {
 	background-color: #f6f6ef;
 	padding-left: 5px;
 	padding-bottom: 1px;
+}
+.reply #comment, .reply .inputLink {
+	border: 1px solid #cccccc;
 }
