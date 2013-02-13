@@ -78,3 +78,6 @@ a.btn_link:link {
 .reply #comment, .reply .inputLink {
 	border: 1px solid #cccccc;
 }
+input.inputLink, textarea {
+	width: 25em;
+}
