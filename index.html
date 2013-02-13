@@ -41,24 +41,7 @@
 	  }); 
   </script>
   <script>
-	  
-	  function showArrowUp(obj){
-		  var arrowUp = document.createElement('div');
-		  arrowUp.setAttribute('class', 'arrow-up');
-		  var textArrowUp = document.createTextNode('▲');
-		  arrowUp.setAttribute("onclick", "showArrowDown(this)");
-		  arrowUp.appendChild(textArrowUp);
-		  
-		  var arrowDown = document.createElement('div');
-		  arrowDown.setAttribute('class', 'arrow-down');
-		  var textArrowDown = document.createTextNode('▼');
-		  arrowDown.setAttribute("onclick", "showArrowDown(this)");
-		  arrowDown.appendChild(arrowUp); 
-		  
-		  
-		  obj.parentNode.parentNode.appendChild(topic);
-		  
-	  }
+	    
 	  function insertComment(obj){
 		  
 		  var theComment = obj.previousSibling.previousSibling.previousSibling.previousSibling;
@@ -77,7 +60,6 @@
 		  var arrowDown = document.createElement('div');
 		  arrowDown.setAttribute('class', 'arrow-down');
 		  var textArrowDown = document.createTextNode('▼');
-		  arrowDown.setAttribute("onclick", "showArrowUp(this)");
 		  arrowDown.appendChild(textArrowDown);
 		  
 		  var timeSpan = document.createElement('span');
@@ -147,7 +129,7 @@
 		  replyForm.appendChild(document.createElement('br'));
 		  replyForm.appendChild(theInput);
 		  
-		  //topic.appendChild(arrowUp);
+		  topic.appendChild(arrowUp);
 		  topic.appendChild(arrowDown);
 		  topic.appendChild(timeSpan);
 		  topic.appendChild(barSpan);
@@ -160,14 +142,12 @@
 		  topic.appendChild(replyForm);
 		  
 		  obj.parentNode.parentNode.appendChild(topic);
+		  $('.arrow-down').hide();
 	  }
 	  
 	  $(document).ready(function() {
 		  $(".addComment").click(function () {
 			  insertComment($(this)[0]);
-			  //$(".reply").hide();
-			  //$(this).next(".arrow-up").hide();
-			  //$(".replyForm").hide();
 		  });		  
 	  });
   </script>
