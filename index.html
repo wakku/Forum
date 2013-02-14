@@ -1,6 +1,6 @@
 <!doctype html>
 <html>
-  <head>
+<head>
   <meta charset="utf-8">
   <title>FORUM - Programming on the web</title>
   <link href="favicon.ico" rel="icon" type="image/x-icon" />
@@ -39,7 +39,7 @@
 		  });
 	  }); 
   </script>
-  <script>
+<script>
 	  function insertComment(obj){
 		  
 		  var theComment = obj.previousSibling.previousSibling.previousSibling.previousSibling;
@@ -52,26 +52,22 @@
 		  var topic = document.createElement('div');
 		 		  
 		  topic.innerHTML += '<div class="topic"><div class="arrow-up">&#9650;</div><div class="arrow-down">&#9660;</div><span class="time">1 hour</span><span class="bar">|</span><a class="btn_link" href="#" title="Get more info" target="_blank">'+ theLink.value +'</a><br /></div><div class="reply"><span class="text">'+theComment.value+'</span><div class="btn_reply"> <a href="#" title="Reply to this comment">reply</a> </div><div class="replyForm"><textarea placeholder="Insert your comment here." name="comment" id="comment" rows="5" cols="45" maxLength="140"></textarea><br /><input name="input link" placeholder="http://" class="inputLink" size="45" maxLength="140"></input><br /><input type="submit" name="add comment" class="addComment" value="add comment" onclick="insertComment(this)" /></div></div>';
+		  	  
 		  obj.parentNode.parentNode.appendChild(topic);
 
 		  obj.previousSibling.previousSibling.previousSibling.previousSibling.value = '';
 		  obj.previousSibling.previousSibling.value = '';	  
 		  		  
-		  
-		   var element_arrowDown = obj.parentNode.nextSibling.firstChild.firstChild.nextSibling;
-		  
-		   //var element_arrowDown = obj.parentNode.nextSibling.childNodes.lastChild.previousSibling.className;
-		  
-		  var element_replyForm = obj.parentNode.nextSibling.firstChild.nextSibling.firstChild.nextSibling.nextSibling;
+		  var element_arrowDown = topic.firstChild.firstChild.nextSibling;
+		  	  
+		  var element_replyForm = topic.firstChild.nextSibling.firstChild.nextSibling.nextSibling;
 
-
-		  // alert(element_arrowDown);
 		  $(element_arrowDown).hide();
 		  $(element_replyForm).hide();
 		 }
 	  }
   </script>
-  </head>
+</head>
   <body>
   <h1>FORUM - Programming on the web</h1>
 </body>
