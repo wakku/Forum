@@ -1,0 +1,10 @@
+git init : initialize repository
+git remote add origin master [link] : add master (it is necessary just one time per repository)
+git pull origin master : pull the online repository
+git add : you put the files you wanna commit inside a queue
+git commit -m "message you want" : you will commit all files previously added in the queue
+git push origin master : push all the changes
+git mergetool : git will show you merge tools available (after press enter to choose opendiff)
+git fetch --all && git reset --hard origin/master : commands to overwrite your changes with the most updated repository
+
+git diff HEAD helloworld.txt : command to compare (using diff) your file and the most udated file (in the HEAD)
