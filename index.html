@@ -6,7 +6,7 @@
   <link href="favicon.ico" rel="icon" type="image/x-icon" />
   <link href="style.css" rel="stylesheet" type="text/css">
   <script class="jsbin" src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
-  <script>
+<script>
 	  $(document).ready(function() {
 		  
 		  var result = [];
@@ -22,7 +22,7 @@
 					 }).appendTo('h1');
 				 });
 			
-		 $('h1').append('<div class="topic"><div class="arrow-up">&#9650;</div><div class="arrow-down">&#9660;</div><span class="title"> Topic 1 - This is a very interesting topic</span>(<a class="btn_link" href="http://www.google.ca" title="Get more info" target="_blank">www.google.ca</a>)<br /><span class="points">19 points</span><span class="bar">|</span> <span class="time">1 hour ago</span><span class="bar">|</span> <span class="comments">5 comments</span> </div><div class="reply"><div class="btn_reply"> <a href="#" title="Reply to this comment">reply</a></div><div class="replyForm"><textarea placeholder="Insert your comment here." name="comment" id="comment" rows="5" cols="45" maxLength="140"></textarea><br /><input name="input link" placeholder="http://" class="inputLink" size="45" maxLength="140" /><br /><input type="submit" name="add comment" class="addComment" value="add comment" onclick="insertComment(this)" /></div></div>');
+		 $('body').append('<div class="topicForm"><textarea placeholder="Insert your topic title here." name="comment" id="comment" rows="5" cols="45" maxLength="140"></textarea><br /><input name="input link" placeholder="http://" class="inputLink" size="45" maxLength="140"></input><br /><input type="submit" name="add comment" class="addComment" value="add comment" onclick="insertComment(this)" /></div><div class="topic"><div class="arrow-up">&#9650;</div><div class="arrow-down">&#9660;</div><span class="title"> Topic 1 - This is a very interesting topic</span>(<a class="btn_link" href="http://www.google.ca" title="Get more info" target="_blank">www.google.ca</a>)<br /><span class="points">19 points</span><span class="bar">|</span> <span class="time">1 hour ago</span><span class="bar">|</span> <span class="comments">5 comments</span> </div><div class="reply"><div class="btn_reply"> <a href="#" title="Reply to this comment">reply</a></div><div class="replyForm"><textarea placeholder="Insert your comment here." name="comment" id="comment" rows="5" cols="45" maxLength="140"></textarea><br /><input name="input link" placeholder="http://" class="inputLink" size="45" maxLength="140" /><br /><input type="submit" name="add comment" class="addComment" value="add comment" onclick="insertComment(this)" /></div></div>');
 		  $(".reply").hide();
 		  $(".arrow-up").hide();
 		  $(document).on("click", ".topic", function(){ 
@@ -70,5 +70,6 @@
 </head>
   <body>
   <h1>FORUM - Programming on the web</h1>
+  <p>Create a new post:</p>
 </body>
 </html>
